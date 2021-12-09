@@ -23,7 +23,7 @@
                 </div>
             </form>
             <hr>
-            <button type="button" class="btn btn-success m-2">Create new account</button>
+            <button type="button" class="btn btn-success m-2" data-toggle="modal" data-target="#register-Modal">Create new account</button>
         </div>
     </div>
 </div>
