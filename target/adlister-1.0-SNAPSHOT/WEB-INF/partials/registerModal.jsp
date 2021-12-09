@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+<%--
+  Created by IntelliJ IDEA.
+  User: jackie
+  Date: 12/9/21
+  Time: 11:53 AM
+  To change this template use File | Settings | File Templates.
+--%>
+
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="font-weight: bold">Register!</h5>
+=======
 
 <div class="modal fade" id="register-Modal" aria-hidden="true" data-toggle="modal" tabindex="-1" aria-labelledby="register-Modal">
     <div class="modal-dialog modal-dialog-centered">
@@ -5,6 +20,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" style="font-weight: bold">Register!</h5>
                 <br>
+>>>>>>> e4e5b2422672d68721c100004ab42008464b0e64
                 <p>It's quick and easy.</p>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -27,7 +43,11 @@
                 </form>
             </div>
             <div class="modal-footer">
+<<<<<<< HEAD
+                <button type="button" class="btn btn-secondary">Cancel</button>
+=======
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+>>>>>>> e4e5b2422672d68721c100004ab42008464b0e64
             </div>
         </div>
     </div>
