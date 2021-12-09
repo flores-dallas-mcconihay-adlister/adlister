@@ -23,6 +23,7 @@
     <container id="main" class="d-flex justify-content-sm-center align-items-center">
         <jsp:include page="partials/form.jsp"/>
     </container>
+    <jsp:include page="partials/registerModal.jsp"/>
 
     <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
 </body>
