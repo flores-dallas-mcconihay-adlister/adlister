@@ -1,10 +1,8 @@
 package dao;
 
-
+import java.sql.DriverManager;
 import com.mysql.cj.jdbc.Driver;
 import models.User;
-
-import javax.servlet.jsp.jstl.core.Config;
 import java.sql.*;
 
 public class MySQLUsersDao implements Users {
