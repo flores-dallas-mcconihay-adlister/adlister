@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = request.getParameter("username");
+        String username = request.getParameter("email");
         String password = request.getParameter("password");
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
@@ -29,10 +29,10 @@ public class LoginServlet extends HttpServlet {
         }
 
         boolean validAttempt = password.equals(user.getPassword());
-
+//I was here
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
-            response.sendRedirect("/profile");
+            response.sendRedirect("/index");
         } else {
             response.sendRedirect("/login");
         }
