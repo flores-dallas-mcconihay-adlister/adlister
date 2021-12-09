@@ -1,0 +1,31 @@
+LaughLister Road Map
+
+Wednesday
+Research
+Create partials
+Plan
+Thursday
+Create servlet for landing page and test
+Create servlet for login/create account
+Friday
+
+
+
+Navbar will have home icon, login, logout, brand/logo
+
+Landing Page
+Navbar (dynamic) jsp
+Mobile Responsive
+Login/Create new account Bootstrap Card (one servlet/jsp)
+Optional: Open a modal when create new account is clicked
+Error Message for login
+Forgot Password - mail API?
+
+Home Page (servlet)
+Navbar
+After user login redirect to homepage with jokes
+Search function
+Categories
+Night/Dark Mode option
+Profile Page (servlet)
+Navbar
