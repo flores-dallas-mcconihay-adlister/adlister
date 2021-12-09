@@ -9,18 +9,21 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/login" method="post">
+                <form action="/register" method="post">
                     <div class="card-body">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="text" class="form-control" placeholder="Username" name="username">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="email" class="form-control" placeholder="Email" name="email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Confirm password">
+                            <input type="password" class="form-control" placeholder="Password" name="password">
                         </div>
-                        <button type="submit" class="btn btn-success btn-block">Register</button>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Confirm password" name="confirm_password">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg d-block mx-auto">Register</button>
                     </div>
                 </form>
             </div>
