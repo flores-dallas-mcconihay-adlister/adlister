@@ -13,14 +13,14 @@ import java.io.IOException;
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-            .forward(request, response);
+                .forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Post post = new Post(
-            1,
-            request.getParameter("title"),
-            request.getParameter("description")
+                1,
+                request.getParameter("title"),
+                request.getParameter("description")
         );
         DaoFactory.getPostsDao().insert(post);
         response.sendRedirect("/posts");
