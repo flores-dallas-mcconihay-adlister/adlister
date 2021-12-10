@@ -6,7 +6,7 @@
     <jsp:include page="/WEB-INF/partials/head.jsp"/>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<jsp:include page="/WEB-INF/partials/navbars/navbar.jsp"/>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">LaughLister!</h1>
