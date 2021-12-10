@@ -22,7 +22,7 @@ public class DeletePostServlet extends HttpServlet {
 				request.getParameter("title"),
 				request.getParameter("description")
 		);
-		DaoFactory.getPostsDao().delete(post);
+//		DaoFactory.getPostsDao().delete(post);
 		response.sendRedirect("/profile.jsp");
 	}
 }
