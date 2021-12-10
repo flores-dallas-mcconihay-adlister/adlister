@@ -51,6 +51,20 @@ public class MySQLPostsDao implements Posts {
         }
     }
 
+    public Long delete(Post post) {
+        try {
+            String deleteQuery = "DELETE FROM posts WHERE id=?";
+            PreparedStatement statement = connection.prepareStatement(deleteQuery, Statement.RETURN_GENERATED_KEYS);
+            statement.setLong(1, post.getUserId());
+            statement.executeUpdate();
+            ResultSet resultSet = statement.getGeneratedKeys();
+            resultSet.next();
+            return resultSet.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating a new post.", e);
+        }
+    }
+
     private Post extractPost(ResultSet rs) throws SQLException {
         return new Post(
             rs.getLong("id"),

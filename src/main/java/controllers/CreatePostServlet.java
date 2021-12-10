@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
-public class CreateAdServlet extends HttpServlet {
+@WebServlet(name = "controllers.CreatePostServlet", urlPatterns = "/create")
+public class CreatePostServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
+        request.getRequestDispatcher("/WEB-INF/partials/createModal.jsp")
                 .forward(request, response);
     }
 
@@ -23,6 +23,6 @@ public class CreateAdServlet extends HttpServlet {
                 request.getParameter("description")
         );
         DaoFactory.getPostsDao().insert(post);
-        response.sendRedirect("/posts");
+        response.sendRedirect("/profile.jsp");
     }
 }
