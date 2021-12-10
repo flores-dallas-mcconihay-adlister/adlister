@@ -1,9 +1,7 @@
 package dao;
 
-//import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 import models.Post;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
