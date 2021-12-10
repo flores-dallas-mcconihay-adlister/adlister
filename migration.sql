@@ -12,16 +12,17 @@ CREATE TABLE users (
      password VARCHAR(40) NOT NULL,
      PRIMARY KEY (id)
 );
-
-CREATE TABLE posts (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE posts(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
     title VARCHAR(100) NOT NULL,
     description TEXT NOT NULL,
+    category TEXT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
     ON DELETE CASCADE
-);
+ );
+
 
 CREATE TABLE comments (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
