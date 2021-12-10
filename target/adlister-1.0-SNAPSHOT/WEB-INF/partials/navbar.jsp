@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jackie
-  Date: 12/8/21
-  Time: 11:10 PM
-  To change this template use File | Settings | File Templates.
---%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">LaughLister!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
