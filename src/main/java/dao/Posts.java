@@ -11,4 +11,6 @@ public interface Posts {
     List<Post> all();
 
     Long insert(Post post);
+
+
 }

@@ -20,7 +20,8 @@ public class CreateAdServlet extends HttpServlet {
         Post post = new Post(
                 1,
                 request.getParameter("title"),
-                request.getParameter("description")
+                request.getParameter("description"),
+                request.getParameter("category")
         );
         DaoFactory.getPostsDao().insert(post);
         response.sendRedirect("/posts");

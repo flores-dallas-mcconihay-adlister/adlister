@@ -16,6 +16,7 @@ public class MySQLPostsDao implements Posts {
                 config.getUrl(),
                 config.getUser(),
                 config.getPassword()
+
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -37,11 +38,12 @@ public class MySQLPostsDao implements Posts {
     @Override
     public Long insert(Post post) {
         try {
-            String insertQuery = "INSERT INTO posts(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO posts(user_id, title, description, category) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, post.getUserId());
             stmt.setString(2, post.getTitle());
             stmt.setString(3, post.getDescription());
+            stmt.setString(4, post.getCategory());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -56,7 +58,8 @@ public class MySQLPostsDao implements Posts {
             rs.getLong("id"),
             rs.getLong("user_id"),
             rs.getString("title"),
-            rs.getString("description")
+            rs.getString("description"),
+            rs.getString("category")
         );
     }
 
