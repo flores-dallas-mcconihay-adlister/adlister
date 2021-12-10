@@ -10,6 +10,7 @@
                 <input type="search" placeholder="Search" aria-label="Search" class="form-control mr-sm-2">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+            <a href="/logout" class="nav-link">Logout</a>
         </div>
     </div>
 </nav>
