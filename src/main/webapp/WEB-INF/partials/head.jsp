@@ -6,5 +6,8 @@
     .navbar-brand {
         color: red!important;
     }
+    .hideJoke {
+        visibility: hidden;
+    }
 </style>
 
