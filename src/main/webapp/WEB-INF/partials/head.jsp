@@ -3,11 +3,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 <style>
-    .navbar-brand {
-        color: red!important;
+    body {
+        background-color: aquamarine;
     }
+
     .hideJoke {
         visibility: hidden;
+    }
+    i {
+        font-size: 26px;
+    }
+    i:hover {
+        opacity: 50%;
     }
 </style>
 

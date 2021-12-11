@@ -6,14 +6,9 @@
     <jsp:include page="/WEB-INF/partials/head.jsp"/>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbars/navbar.jsp"/>
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">LaughLister!</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-
-    </div>
-</div>
+<jsp:include page="/WEB-INF/partials/navbars/profile-navbar.jsp"/>
+<jsp:include page="partials/addPostModal.jsp"/>
+<button type="button" data-toggle="modal" data-target="#addPostModal" class="btn btn-primary m-2">Add Post</button>
 <container class="d-flex">
     <c:forEach var="posts" items="${posts}">
         <div class="card m-5">
