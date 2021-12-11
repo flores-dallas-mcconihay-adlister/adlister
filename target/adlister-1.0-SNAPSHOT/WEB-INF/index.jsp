@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbars/profile-navbar.jsp"/>
-<jsp:include page="partials/addPostModal.jsp"/>
+<jsp:include page="partials/modals/addPostModal.jsp"/>
 <button type="button" data-toggle="modal" data-target="#addPostModal" class="btn btn-primary m-2">Add Post</button>
 <container class="d-flex">
     <c:forEach var="posts" items="${posts}">
