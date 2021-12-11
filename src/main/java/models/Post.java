@@ -23,6 +23,9 @@ public class Post {
         this.category = category;
     }
 
+    public Post(int i, String title, String description) {
+    }
+
     public long getId() {
         return id;
     }

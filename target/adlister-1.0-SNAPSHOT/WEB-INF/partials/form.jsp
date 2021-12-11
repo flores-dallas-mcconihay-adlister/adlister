@@ -7,7 +7,7 @@
 --%>
 <div class="row">
     <div class="col-sm">
-        <div class="card">
+        <div class="card shadow rounded">
             <form action="/login" method="post" class="">
                 <div class="card-body">
                     <div class="form-group">

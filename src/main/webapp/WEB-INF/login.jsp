@@ -5,12 +5,20 @@
     <jsp:include page="/WEB-INF/partials/head.jsp"/>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbars/navbar.jsp"/>
+<div id="loginContainer" class="container">
+    <div class="row">
+        <div class="mx-auto">
+            <jsp:include page="/WEB-INF/partials/loginJumbotron.jsp"/>
+        </div>
+        <div id="main" class="mx-auto d-flex justify-content-sm-center align-items-center">
+            <jsp:include page="partials/form.jsp"/>
+        </div>
+    </div>
+</div>
 
-    <container id="main" class="d-flex justify-content-sm-center align-items-center">
-        <jsp:include page="partials/form.jsp"/>
-    </container>
-    <jsp:include page="partials/registerModal.jsp"/>
+
+
+<jsp:include page="partials/modals/registerModal.jsp"/>
 
     <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
 
