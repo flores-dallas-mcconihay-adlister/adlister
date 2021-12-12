@@ -24,6 +24,6 @@ public class CreatePostServlet extends HttpServlet {
                 request.getParameter("category")
         );
         DaoFactory.getPostsDao().insert(post);
-        response.sendRedirect("/profile.jsp");
+        response.sendRedirect("/profile");
     }
 }
