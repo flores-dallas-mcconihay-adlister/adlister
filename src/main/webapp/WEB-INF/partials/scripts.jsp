@@ -17,4 +17,6 @@
         })
     }
 
+	$('body').css('background-image', 'laughing-emoji.png')
+
 </script>

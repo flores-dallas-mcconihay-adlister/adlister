@@ -19,12 +19,16 @@
                 <form action="/create" method="post">
                     <div class="card-body">
                         <div class="form-group">
+                            <label for="category">Category</label>
+                            <input id="category" type="text" name="category" placeholder="Enter a category name.." class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="title">Title</label>
-                            <input id="title" type="text" class="form-control" placeholder="Joke title" name="title">
+                            <input id="title" type="text" class="form-control" placeholder="Joke title.." name="title">
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input id="description" type="text" class="form-control" placeholder="Tell your joke...." name="description">
+                            <input id="description" type="text" class="form-control" placeholder="Tell your joke.." name="description">
                         </div>
                         <button type="submit" class="btn btn-success btn-lg d-block mx-auto">Create</button>
                     </div>
