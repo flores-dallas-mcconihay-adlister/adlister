@@ -13,4 +13,5 @@ public interface Posts {
 
     Post uniquePostId(Long post);
 
+	List<Post> searchPost(String searchString);
 }
