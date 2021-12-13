@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLPostsDao implements Posts {
-    private Connection connection = null;
+    private static Connection connection;
+//    private Connection connection = null;
 
     public MySQLPostsDao(Config config) {
         try {
@@ -53,15 +54,12 @@ public class MySQLPostsDao implements Posts {
         }
     }
 
-    public Long delete(Post post) {
+    public static void delete(int id) {
         try {
             String deleteQuery = "DELETE FROM posts WHERE id=?";
             PreparedStatement statement = connection.prepareStatement(deleteQuery, Statement.RETURN_GENERATED_KEYS);
-            statement.setLong(1, post.getUserId());
+            statement.setInt(1, id);
             statement.executeUpdate();
-            ResultSet resultSet = statement.getGeneratedKeys();
-            resultSet.next();
-            return resultSet.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new post.", e);
         }
