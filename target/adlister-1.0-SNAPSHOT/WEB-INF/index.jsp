@@ -16,6 +16,7 @@
                 <h3 class="card-title"> ${posts.title}</h3>
                 <p id="hide-joke" class="card-text">${posts.description}</p>
                 <button class="btn btn-outline-success" id="show-joke">Show</button>
+                <button class="btn btn-danger" name="post-delete" type="submit"><i class="bi bi-trash-fill"></i></button>
             </div>
         </div>
 
