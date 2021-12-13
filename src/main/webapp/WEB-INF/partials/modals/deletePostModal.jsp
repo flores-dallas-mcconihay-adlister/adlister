@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jackie
-  Date: 12/12/21
-  Time: 10:04 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="modal fade" id="deletePostModal" aria-hidden="true" data-toggle="modal" tabindex="-1" aria-labelledby="deletePostModal">
     <div class="modal-dialog modal-dialog-centered">

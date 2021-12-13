@@ -2,7 +2,6 @@ package controllers;
 
 import dao.DaoFactory;
 import models.Post;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
