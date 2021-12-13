@@ -39,6 +39,11 @@
                                             <button name="deletePost" value="${posts.id}" type="submit" class="btn btn-danger btn-lg d-block mx-auto">Yes, delete</button>
                                         </div>
                                     </form>
+                                    <form action="/single" method="get">
+                                        <button>Click Here For Details!</button>
+                                        <input type = "hidden" name = "singlePost" value="${posts.id}">
+
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
