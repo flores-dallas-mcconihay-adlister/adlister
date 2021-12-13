@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "controllers.ServerServlet", urlPatterns = "/index")
+@WebServlet(name = "controllers.ServerServlet", urlPatterns = "/search")
 public class SearchServlet extends HttpServlet {
 
 	@Override
