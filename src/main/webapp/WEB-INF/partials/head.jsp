@@ -10,7 +10,8 @@
 		height: 100%;
 	}
 	body {
-		/*background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);*/
+        /*background-color: #1D976C;*/
+		background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 		height: 100%;
 	}
     
@@ -87,7 +88,7 @@
     /*overall css edits end*/
     
     /*media queries*/
-    @media screen and (min-width: 320px) and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         /*login screen edits*/
         .main-header {
             font-size: 3.5rem;
@@ -97,7 +98,7 @@
         }
         .content {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             height: 100vh;
             margin-top: 30px;
         }
@@ -154,21 +155,36 @@
         }
 
 	}
-    
 
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .main-header {
+            text-align: center;
+		}
+        .emoji-pic {
+			text-align: center;
+        }
+        .join-button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+        }
 
+        .content {
 
+            display: flex;
+            justify-content: space-around;
+            height: 100vh;
+            margin-top: 20%;
+            /*width: 100%;*/
+            /*margin-right: auto;*/
+            /*margin-left: auto;*/
+            /*width: 0;!important;*/
+            /*padding-right: 0;!important;*/
+            /*padding-left: 0;!important;*/
+        }
+	}
 
-
-    /*.logo-box {*/
-    /*    !*border: 1px solid black;*!*/
-    /*    !*height: 330px;*!*/
-    /*    !*width: 485px*!*/
-    /*}*/
-
-    .hideJoke {
-        visibility: hidden;
-    }
 
     
 
