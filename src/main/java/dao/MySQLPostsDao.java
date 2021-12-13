@@ -17,7 +17,6 @@ public class MySQLPostsDao implements Posts {
                 config.getUrl(),
                 config.getUser(),
                 config.getPassword()
-
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -26,29 +25,46 @@ public class MySQLPostsDao implements Posts {
 
     @Override
     public List<Post> all() {
-        PreparedStatement stmt = null;
+        PreparedStatement statement = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM posts");
-            ResultSet rs = stmt.executeQuery();
-            return createPostFromResults(rs);
+            statement = connection.prepareStatement("SELECT * FROM posts");
+            ResultSet resultSet = statement.executeQuery();
+            return createPostFromResults(resultSet);
         } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving all ads.", e);
+            throw new RuntimeException("Error retrieving all posts.", e);
         }
     }
 
     @Override
+    public List<Post> searchPost(String searchField) {
+        try {
+            List<Post> postList = new ArrayList<>();
+            String searchQuery = "SELECT id FROM posts WHERE title LIKE ?";
+            PreparedStatement statement = connection.prepareStatement(searchQuery, Statement.NO_GENERATED_KEYS);
+            statement.setString(1, "%" + searchField + "%");
+            statement.executeQuery();
+            ResultSet resultSet = statement.getResultSet();
+            while (resultSet.next()) {
+                postList.add(uniquePostId(resultSet.getLong("id")));
+            }
+            return postList;
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving searched Post", e);
+        }
+    }
+    @Override
     public Long insert(Post post) {
         try {
             String insertQuery = "INSERT INTO posts(user_id, title, description, category) VALUES (?, ?, ?, ?)";
-            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, post.getUserId());
-            stmt.setString(2, post.getTitle());
-            stmt.setString(3, post.getDescription());
-            stmt.setString(4, post.getCategory());
-            stmt.executeUpdate();
-            ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+            PreparedStatement statement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            statement.setLong(1, post.getUserId());
+            statement.setString(2, post.getTitle());
+            statement.setString(3, post.getDescription());
+            statement.setString(4, post.getCategory());
+            statement.executeUpdate();
+            ResultSet resultSet = statement.getGeneratedKeys();
+            resultSet.next();
+            return resultSet.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new post.", e);
         }
@@ -76,25 +92,33 @@ public class MySQLPostsDao implements Posts {
             statement.setLong(1, post.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error deleting post", e);
         }
     }
 
-    private Post extractPost(ResultSet rs) throws SQLException {
+    private Post extractPost(ResultSet resultSet) {
+        try {
         return new Post(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
-            rs.getString("title"),
-            rs.getString("description"),
-            rs.getString("category")
+                resultSet.getLong("id"),
+                resultSet.getLong("user_id"),
+                resultSet.getString("title"),
+                resultSet.getString("description"),
+                resultSet.getString("category")
         );
+        } catch (SQLException e) {
+            throw new RuntimeException("Error extracting post", e);
+        }
     }
 
-    private List<Post> createPostFromResults(ResultSet rs) throws SQLException {
-        List<Post> posts = new ArrayList<>();
-        while (rs.next()) {
-            posts.add(extractPost(rs));
+    private List<Post> createPostFromResults(ResultSet resultSet) {
+        try {
+            List<Post> posts = new ArrayList<>();
+            while (resultSet.next()) {
+                posts.add(extractPost(resultSet));
+            }
+            return posts;
+        } catch(SQLException e){
+                throw new RuntimeException("Error creating post", e);
+            }
         }
-        return posts;
     }
-}
