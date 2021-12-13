@@ -12,5 +12,8 @@ public interface Posts {
 
     Long insert(Post post);
 
+    void delete(Post post);
+
+    Post uniquePostId(Long post);
 
 }
