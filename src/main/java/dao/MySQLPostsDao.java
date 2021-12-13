@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLPostsDao implements Posts {
-    private static Connection connection;
-//    private Connection connection = null;
+//    private static Connection connection;
+    private Connection connection = null;
 
     public MySQLPostsDao(Config config) {
         try {
@@ -53,15 +53,30 @@ public class MySQLPostsDao implements Posts {
             throw new RuntimeException("Error creating a new post.", e);
         }
     }
-
-    public static void delete(int id) {
+    @Override
+    public Post uniquePostId(Long ad){
+        String query = "SELECT * FROM posts WHERE id = ? LIMIT 1";
+        try{
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setLong(1, ad);
+            ResultSet resultSet = statement.executeQuery();
+            if (! resultSet.next()) {
+                return null;
+            }
+            return extractPost(resultSet);
+        } catch(SQLException e) {
+            throw new RuntimeException("Error finding Ad ID", e);
+        }
+    }
+    @Override
+    public void delete(Post post) {
         try {
-            String deleteQuery = "DELETE FROM posts WHERE id=?";
+            String deleteQuery = "DELETE FROM posts WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(deleteQuery, Statement.RETURN_GENERATED_KEYS);
-            statement.setInt(1, id);
+            statement.setLong(1, post.getId());
             statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException("Error creating a new post.", e);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 

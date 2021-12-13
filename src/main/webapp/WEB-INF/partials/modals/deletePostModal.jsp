@@ -19,7 +19,7 @@
                 <form action="/delete" method="post">
                     <div class="card-body">
                         <p>Are you sure you want to delete this post?</p>
-                        <button type="submit" class="btn btn-danger btn-lg d-block mx-auto">Yes, delete</button>
+                        <button name="deletePost" value="${post.id}" type="submit" class="btn btn-danger btn-lg d-block mx-auto">Yes, delete</button>
                     </div>
                 </form>
             </div>
