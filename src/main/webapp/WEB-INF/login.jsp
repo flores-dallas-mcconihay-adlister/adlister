@@ -5,19 +5,19 @@
     <jsp:include page="/WEB-INF/partials/head.jsp"/>
 </head>
 <body>
-    <div id="loginContainer" class="content container-fluid">
-        <div class="logo-box container">
-            <div class="container">
-                <h1 class="main-header mx-auto">Laughlister!</h1>
+    <div id="loginContainer" class="content">
+        <div class="logo-box">
+            <div>
+                <h1 class="main-header">Laughlister!</h1>
                 <p class="lead main-p"><em>It's like Craigslist, but for jokes!</em></p>
                 <hr class="main-break">
                 <div class="emoji-pic">
-                    <img class="center-pic" src="./images/laughing-emoji.png" alt="">
+                    <img class="center-pic" src="../images/laughing-emoji.png" alt="emoji">
                 </div>
                 <button type="button" class="btn btn-outline-secondary join-button" data-toggle="modal" data-target="#register-Modal">Join</button>
             </div>
         </div>
-        <div id="main" class="mx-auto justify-content-sm-center align-items-center form-container">
+        <div id="main" class="form-container">
             <jsp:include page="partials/form.jsp"/>
         </div>
     </div>
