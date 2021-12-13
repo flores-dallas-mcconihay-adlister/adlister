@@ -54,18 +54,18 @@ public class MySQLPostsDao implements Posts {
         }
     }
     @Override
-    public Post uniquePostId(Long ad){
+    public Post uniquePostId(Long post){
         String query = "SELECT * FROM posts WHERE id = ? LIMIT 1";
-        try{
+        try {
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setLong(1, ad);
+            statement.setLong(1, post);
             ResultSet resultSet = statement.executeQuery();
             if (! resultSet.next()) {
                 return null;
             }
             return extractPost(resultSet);
         } catch(SQLException e) {
-            throw new RuntimeException("Error finding Ad ID", e);
+            throw new RuntimeException("Error finding post ID", e);
         }
     }
     @Override
@@ -75,8 +75,8 @@ public class MySQLPostsDao implements Posts {
             PreparedStatement statement = connection.prepareStatement(deleteQuery, Statement.RETURN_GENERATED_KEYS);
             statement.setLong(1, post.getId());
             statement.executeUpdate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

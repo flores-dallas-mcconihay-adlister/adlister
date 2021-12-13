@@ -1,8 +1,6 @@
 package dao;
 
-//import com.codeup.adlister.models.Ad;
 import models.Post;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,12 +15,9 @@ public class ListPostsDao  {
     }
 
     public Long insert(Post post) {
-        // make sure we have ads
         if (posts == null) {
             posts = generatePosts();
         }
-        // we'll assign an "id" here based on the size of the ads list
-        // really the dao would handle this
         post.setId((long) posts.size());
         posts.add(post);
         return post.getId();
