@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "controllers.ServerServlet", urlPatterns = "/index")
+@WebServlet(name = "controllers.ServerServlet", urlPatterns = "/search")
 public class SearchServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String searchString = request.getParameter("s");
+		String searchString = request.getParameter("search");
 		List<Post> postList = DaoFactory.getPostsDao().searchPost(searchString);
 		request.setAttribute("posts", postList);
 
-		request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/partials/navbars/profile-navbar.jsp").forward(request, response);
 	}
 }
 
