@@ -15,20 +15,24 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        User registeredUser = (User) request.getSession().getAttribute("user");
+        User userPost = DaoFactory.getUsersDao().findByUsername(registeredUser.getUsername());
+        request.setAttribute("posts", DaoFactory.getPostsDao().allById(userPost.getId()));
+
 
 
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        User user = DaoFactory.getUsersDao().findByUsername(username);
-
-        if (user != null) {
-            request.setAttribute("posts", DaoFactory.getPostsDao().all());
-            return;
-        }
-
-    }
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        String username = request.getParameter("username");
+//        String password = request.getParameter("password");
+//        User user = DaoFactory.getUsersDao().findByUsername(username);
+//
+//        if (user != null) {
+//            request.setAttribute("posts", DaoFactory.getPostsDao().all());
+//            return;
+//        }
+//
+//    }
 }
 

@@ -84,6 +84,20 @@ public class MySQLPostsDao implements Posts {
             throw new RuntimeException("Error finding post ID", e);
         }
     }
+    public Post allById(Long id){
+        String query = "SELECT * FROM posts WHERE user_id = ? LIMIT 1";
+        try{
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setLong(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if(! resultSet.next()){
+                return null;
+            }
+            return extractPost(resultSet);
+        } catch(SQLException e){
+            throw new RuntimeException("Error finding user ID", e);
+        }
+    }
     @Override
     public void delete(Post post) {
         try {
