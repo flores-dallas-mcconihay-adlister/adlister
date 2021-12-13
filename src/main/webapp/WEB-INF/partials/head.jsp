@@ -88,6 +88,7 @@
     
     /*media queries*/
     @media screen and (min-width: 320px) and (max-width: 768px) {
+        /*login screen edits*/
         .main-header {
             font-size: 3.5rem;
             font-weight: 300;
@@ -128,6 +129,28 @@
             align-items: center;
             display: flex;
             justify-content: center;
+        }
+        /*login screen edits end*/
+
+        /*index/home page edits*/
+        .index-container {
+
+        }
+        .cards {
+            margin: 10px auto;
+            width: 100%;
+        }
+        .add-button {
+            display: block;
+            width: 100%;
+            margin: .5rem!important;
+        }
+        .flex-button {
+            display: flex;
+            justify-content: center;
+        }
+        .index-header {
+            margin-bottom: 5rem;
         }
 
 	}

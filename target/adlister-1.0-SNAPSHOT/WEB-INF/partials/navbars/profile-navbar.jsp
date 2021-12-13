@@ -11,7 +11,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mx-lg-auto">
-            <form action="" class="form-inline">
+            <form action="" class="form-inline mt-3">
                 <input type="search" placeholder="Search" aria-label="Search" class="form-control mr-sm-2">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
