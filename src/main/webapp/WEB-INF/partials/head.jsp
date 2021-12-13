@@ -87,7 +87,6 @@
             font-size: 3.5rem;
             font-weight: 300;
             line-height: 1.2;
-
         }
         .main-p {
             text-align: center;
@@ -118,7 +117,7 @@
 
     footer {
         /*z-index: 1;*/
-        flex-shrink: 0;
+        /*flex-shrink: 0;*/
         /*background-color: #eeeeee;*/
     }
     /*.logo-box {*/

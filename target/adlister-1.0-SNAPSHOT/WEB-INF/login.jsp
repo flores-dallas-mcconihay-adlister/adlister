@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="loginContainer" class="content container">
-        <div class="logo-box">
+        <div class="logo-box container">
             <div class="container">
                 <h1 class="main-header">Laughlister!</h1>
                 <p class="lead main-p"><em>It's like Craigslist, but for jokes!</em></p>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <jsp:include page="partials/modals/registerModal.jsp"/>
-<%--    <jsp:include page="partials/footer.jsp"/>--%>
+    <jsp:include page="partials/footer.jsp"/>
     <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
 </body>
 </html>
