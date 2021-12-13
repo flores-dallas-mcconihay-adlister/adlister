@@ -18,8 +18,8 @@ public class SearchServlet extends HttpServlet {
 		String searchString = request.getParameter("search");
 		List<Post> postList = DaoFactory.getPostsDao().searchPost(searchString);
 		request.setAttribute("posts", postList);
-
-		request.getRequestDispatcher("/WEB-INF/partials/navbars/profile-navbar.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+//		request.getRequestDispatcher("/WEB-INF/partials/navbars/profile-navbar.jsp").forward(request, response);
 	}
 }
 
