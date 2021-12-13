@@ -37,6 +37,21 @@ public class MySQLPostsDao implements Posts {
     }
 
     @Override
+    public List<Post> searchPost(String keyword) throws SQLException {
+
+        List<Post> adList = new ArrayList<>();
+        String searchQuery = "SELECT id FROM posts WHERE title LIKE ?";
+        PreparedStatement statement = connection.prepareStatement(searchQuery, Statement.NO_GENERATED_KEYS);
+        statement.setString(1, "%" + keyword + "%");
+        statement.executeQuery();
+        ResultSet resultSet = statement.getResultSet();
+        while (resultSet.next()) {
+            adList.add(uniquePostId(resultSet.getLong("id")));
+        }
+        return adList;
+    }
+
+    @Override
     public Long insert(Post post) {
         try {
             String insertQuery = "INSERT INTO posts(user_id, title, description, category) VALUES (?, ?, ?, ?)";
