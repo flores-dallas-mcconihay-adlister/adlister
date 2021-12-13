@@ -11,7 +11,7 @@
 	}
 	body {
 		/*background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);*/
-		/*height: 100%;*/
+		height: 100%;
 	}
     
 	.btn-grad {background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)}
@@ -79,14 +79,27 @@
 	i:hover {
 		opacity: 50%;
 	}
+	#loginContainer {
+		/*margin-top: 5rem;*/
+        /*padding: 20px;*/
+        padding: 10px 5px;
+	}
     /*overall css edits end*/
     
     /*media queries*/
     @media screen and (min-width: 320px) and (max-width: 768px) {
+        /*login screen edits*/
         .main-header {
             font-size: 3.5rem;
             font-weight: 300;
             line-height: 1.2;
+            text-align: center;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+            margin-top: 30px;
         }
         .main-p {
             text-align: center;
@@ -94,32 +107,59 @@
         .logo-box {
             display: flex;
             justify-content: center;
+            margin-bottom: 0;
         }
         .join-button {
             display: none;
         }
         .form-container {
-            padding: 32px;
+            display: flex;
+            justify-content: center;
+        }
+		footer {
+            margin-top: 200px;
+
+
+			/*z-index: 1;*/
+			/*flex-shrink: 0;*/
+			/*background-color: #eeeeee;*/
+		}
+        .emoji-pic {
+            height: 250px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        /*login screen edits end*/
+
+        /*index/home page edits*/
+        .index-container {
+
+        }
+        .cards {
+            margin: 10px auto;
+            width: 100%;
+        }
+        .add-button {
+            display: block;
+            width: 100%;
+            margin: .5rem!important;
+        }
+        .flex-button {
+            display: flex;
+            justify-content: center;
+        }
+        .index-header {
+            margin-bottom: 5rem;
         }
 
-        
 	}
     
 
 
-    .content {
-        /*flex: 1 0 auto;*/
-        /*position: absolute;*/
-        /*left: 13%;*/
-        /*top: 10%;*/
-        /*flex: border-box;*/
-    }
 
-    footer {
-        /*z-index: 1;*/
-        /*flex-shrink: 0;*/
-        /*background-color: #eeeeee;*/
-    }
+
+
     /*.logo-box {*/
     /*    !*border: 1px solid black;*!*/
     /*    !*height: 330px;*!*/
@@ -129,10 +169,7 @@
     .hideJoke {
         visibility: hidden;
     }
-    #loginContainer {
-        margin-top: 5rem;
 
-    }
     
 
 

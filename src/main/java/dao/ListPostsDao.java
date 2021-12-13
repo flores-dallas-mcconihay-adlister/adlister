@@ -6,7 +6,7 @@ import models.Post;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListPostsDao implements Posts {
+public class ListPostsDao  {
     private List<Post> posts;
 
     public List<Post> all() {
