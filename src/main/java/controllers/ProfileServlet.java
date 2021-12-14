@@ -17,7 +17,7 @@ public class ProfileServlet extends HttpServlet {
 
         User registeredUser = (User) request.getSession().getAttribute("user");
         User userPost = DaoFactory.getUsersDao().findByUsername(registeredUser.getUsername());
-        request.setAttribute("posts", DaoFactory.getPostsDao().allById(userPost.getId()));
+        request.setAttribute("post", DaoFactory.getPostsDao().allById(userPost.getId()));
 
 
 
