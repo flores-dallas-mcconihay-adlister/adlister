@@ -14,7 +14,15 @@
 		background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 		height: 100%;
 	}
-    
+	.delete-button, .edit-button {
+        margin: 5px;
+	}
+    .show-button {
+        margin-right: auto;
+
+    }
+
+
 	.btn-grad {background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)}
 	.btn-grad {
 		/*margin: 10px;*/
@@ -141,11 +149,7 @@
             margin: 10px auto;
             width: 100%;
         }
-        .add-button {
-            display: block;
-            width: 100%;
-            margin: .5rem!important;
-        }
+
         .flex-button {
             display: flex;
             justify-content: center;
@@ -153,12 +157,20 @@
         .index-header {
             margin-bottom: 5rem;
         }
+		.add-button {
+			display: block;
+			width: 50%;
+			margin: .5rem!important;
+		}
 
 	}
 
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-        .main-header {
-            text-align: center;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+		.main-header {
+			font-size: 3.5rem;
+			font-weight: 300;
+			line-height: 1.2;
+			text-align: center;
 		}
         .emoji-pic {
 			text-align: center;
@@ -176,13 +188,22 @@
             justify-content: space-around;
             height: 100vh;
             margin-top: 20%;
-            /*width: 100%;*/
-            /*margin-right: auto;*/
-            /*margin-left: auto;*/
-            /*width: 0;!important;*/
-            /*padding-right: 0;!important;*/
-            /*padding-left: 0;!important;*/
         }
+        .flex-button {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+		.add-button {
+			display: block;
+			width: 50%;
+			margin: .5rem!important;
+		}
+        .cards {
+            margin: 10px auto;
+            width: 100%;
+        }
+
 	}
 
 
