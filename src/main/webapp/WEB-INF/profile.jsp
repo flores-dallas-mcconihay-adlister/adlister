@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: jackie
-  Date: 12/10/21
-  Time: 9:50 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,12 +10,17 @@
 
     <div class="container index-container">
     <container class="flex-column d-flex">
-        <c:forEach var="posts" items="${posts}">
+
+        <c:forEach var="post" items="${sessionScope.posts}" >
             <div class="card cards">
                 <div class="card-body">
-                    <h3 class="card-title"> ${posts.title}</h3>
-                    <p id="hide-joke" class="card-text">${posts.description}</p>
-                    <button class="btn btn-danger" data-id="${posts.id}" data-toggle="modal" data-target="#deletePostModal" name="post-delete" type="submit"><i class="bi bi-trash-fill" style="font-size: 16px"></i></button>
+                    <c:forEach var="user" items="${sessionScope.users}">
+                    <h1> ${user.username} </h1>
+                    </c:forEach>
+                    <h3 class="card-title">  ${post.title} </h3>
+
+                    <p id="hide-joke" class="card-text"> ${post.description} </p>
+                    <button class="btn btn-danger" ${post.id} data-toggle="modal" data-target="#deletePostModal" name="post-delete" type="submit"><i class="bi bi-trash-fill" style="font-size: 16px"></i></button>
                     <div class="modal fade" id="deletePostModal" aria-hidden="true" data-toggle="modal" tabindex="-1" aria-labelledby="deletePostModal">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -40,7 +38,7 @@
                                         </div>
                                     </form>
                                     <form action="/single" method="get">
-                                        <button>Click Here For Details!</button>
+                                        <button>Click Here For Details!!</button>
                                         <input type = "hidden" name = "singlePost" value="${posts.id}">
 
                                     </form>
@@ -53,6 +51,7 @@
                     </div>
                 </div>
             </div>
+
         </c:forEach>
     </container>
     </div>

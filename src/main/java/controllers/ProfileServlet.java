@@ -17,6 +17,9 @@ public class ProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         User user = DaoFactory.getUsersDao().findByUsername((String) request.getSession().getAttribute("user"));
+        User registeredUser = (User) request.getSession().getAttribute("user");
+        User userPost = DaoFactory.getUsersDao().findByUsername(registeredUser.getUsername());
+        request.setAttribute("post", DaoFactory.getPostsDao().allById(userPost.getId()));
 
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
