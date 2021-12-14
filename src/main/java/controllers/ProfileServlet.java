@@ -18,6 +18,13 @@ public class ProfileServlet extends HttpServlet {
         User registeredUser = (User) request.getSession().getAttribute("user");
         User userPost = DaoFactory.getUsersDao().findByUsername(registeredUser.getUsername());
         request.setAttribute("post", DaoFactory.getPostsDao().allById(userPost.getId()));
+//        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+
+
+//        request.setAttribute("user", DaoFactory.getUsersDao().findByUsername(registeredUser.getUsername()));
+
+
+
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 }

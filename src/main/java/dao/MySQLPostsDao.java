@@ -90,9 +90,6 @@ public class MySQLPostsDao implements Posts {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
-            if(! resultSet.next()){
-                return null;
-            }
             return createPostFromResults(resultSet);
         } catch(SQLException e){
             throw new RuntimeException("Error finding user ID", e);
