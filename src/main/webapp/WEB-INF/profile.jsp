@@ -42,16 +42,6 @@
                                             </button>
                                         </div>
                                     </form>
-<!--                                     <form action="/single" method="get">
-
-                                        <button>Click Here For Details!</button>
-                                        <input type="hidden" name="singlePost" value="">
-
-                                        <button>Click Here For Details!!</button>
-                                        <input type = "hidden" name = "singlePost" value="">
-
-
-                                    </form> -->
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
