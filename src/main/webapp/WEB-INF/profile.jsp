@@ -7,16 +7,15 @@
 <body>
 <jsp:include page="partials/navbars/profile-navbar.jsp"/>
 
-
+<h1>Top uh da moanin ${sessionScope.user.username}!</h1>
+<h1>innit dis your email, ${sessionScope.user.email}!</h1>
 <div class="container index-container">
     <container class="flex-column d-flex">
 <%--items is grabbing the get att--%>
         <c:forEach var="post" items="${post}">
             <div class="card cards">
                 <div class="card-body">
-                        <%--                    <c:forEach var="user" items="${users}">--%>
-                        <%--                    <h1> ${user.username} </h1>--%>
-                        <%--                    </c:forEach>--%>
+
                     <h3 class="card-title"> ${post.title} </h3>
 
                     <p id="hide-joke" class="card-text"> ${post.description} </p>
