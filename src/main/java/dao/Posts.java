@@ -11,6 +11,8 @@ public interface Posts {
 
     void delete(Post post);
 
+    void update(Post post);
+
     Post uniquePostId(Long post);
 
 	List<Post> searchPost(String searchString);

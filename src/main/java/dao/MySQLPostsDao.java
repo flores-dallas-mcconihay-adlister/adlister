@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLPostsDao implements Posts {
-//    private static Connection connection;
+    //    private static Connection connection;
     private Connection connection = null;
 
     public MySQLPostsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -52,6 +52,7 @@ public class MySQLPostsDao implements Posts {
             throw new RuntimeException("Error retrieving searched Post", e);
         }
     }
+
     @Override
     public Long insert(Post post) {
         try {
@@ -69,35 +70,38 @@ public class MySQLPostsDao implements Posts {
             throw new RuntimeException("Error creating a new post.", e);
         }
     }
+
     @Override
-    public Post uniquePostId(Long post){
+    public Post uniquePostId(Long post) {
         String query = "SELECT * FROM posts WHERE id = ? LIMIT 1";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setLong(1, post);
             ResultSet resultSet = statement.executeQuery();
-            if (! resultSet.next()) {
+            if (!resultSet.next()) {
                 return null;
             }
             return extractPost(resultSet);
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException("Error finding post ID", e);
         }
     }
-    public List<Post> allById(Long id){
+
+    public List<Post> allById(Long id) {
         String query = "SELECT * FROM posts WHERE user_id = ?";
-        try{
+        try {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
-            if(! resultSet.next()){
+            if (!resultSet.next()) {
                 return null;
             }
             return createPostFromResults(resultSet);
-        } catch(SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException("Error finding user ID", e);
         }
     }
+
     @Override
     public void delete(Post post) {
         try {
@@ -112,13 +116,13 @@ public class MySQLPostsDao implements Posts {
 
     private Post extractPost(ResultSet resultSet) {
         try {
-        return new Post(
-                resultSet.getLong("id"),
-                resultSet.getLong("user_id"),
-                resultSet.getString("title"),
-                resultSet.getString("description"),
-                resultSet.getString("category")
-        );
+            return new Post(
+                    resultSet.getLong("id"),
+                    resultSet.getLong("user_id"),
+                    resultSet.getString("title"),
+                    resultSet.getString("description"),
+                    resultSet.getString("category")
+            );
         } catch (SQLException e) {
             throw new RuntimeException("Error extracting post", e);
         }
@@ -131,8 +135,24 @@ public class MySQLPostsDao implements Posts {
                 posts.add(extractPost(resultSet));
             }
             return posts;
-        } catch(SQLException e){
-                throw new RuntimeException("Error creating post", e);
-            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating post", e);
         }
     }
+
+    public void update(Post post) {
+
+        try {
+            String updateQuery = "UPDATE posts set title = ?, description = ?, category = ? WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(updateQuery);
+            statement.setString(1, post.getTitle());
+            statement.setString(2, post.getDescription());
+            statement.setString(3, post.getCategory());
+            statement.setLong(4, post.getId());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating Post!", e);
+        }
+
+    }
+
+}
