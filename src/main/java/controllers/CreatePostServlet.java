@@ -2,6 +2,8 @@ package controllers;
 
 import dao.DaoFactory;
 import models.Post;
+import models.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +19,12 @@ public class CreatePostServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Post post = new Post(
-                1,
+        User user = (User) request.getSession().getAttribute("user");
+        request.getSession().setAttribute("user", user);
+
+
+                Post post = new Post(
+                user.getId(),
                 request.getParameter("title"),
                 request.getParameter("description"),
                 request.getParameter("category")
