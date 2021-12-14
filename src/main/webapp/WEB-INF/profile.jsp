@@ -38,7 +38,7 @@
                                         </div>
                                     </form>
                                     <form action="/single" method="get">
-                                        <button>Click Here For Details!</button>
+                                        <button>Click Here For Details!!</button>
                                         <input type = "hidden" name = "singlePost" value="${posts.id}">
 
                                     </form>
