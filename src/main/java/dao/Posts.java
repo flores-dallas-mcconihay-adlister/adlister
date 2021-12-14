@@ -15,5 +15,5 @@ public interface Posts {
 
 	List<Post> searchPost(String searchString);
 
-    Post allById(Long id);
+    List<Post> allById(Long id);
 }
