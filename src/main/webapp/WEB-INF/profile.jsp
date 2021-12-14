@@ -55,7 +55,6 @@
         </c:forEach>
     </container>
 </div>
-
-<jsp:include page="partials/scripts.jsp"/>
+<jsp:include page="/WEB-INF/partials/scripts.jsp"/>
 </body>
 </html>
