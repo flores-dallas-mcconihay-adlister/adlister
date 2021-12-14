@@ -45,10 +45,10 @@
 <!--                                     <form action="/single" method="get">
 
                                         <button>Click Here For Details!</button>
-                                        <input type="hidden" name="singlePost" value="${post.id}">
+                                        <input type="hidden" name="singlePost" value="">
 
                                         <button>Click Here For Details!!</button>
-                                        <input type = "hidden" name = "singlePost" value="${posts.id}">
+                                        <input type = "hidden" name = "singlePost" value="">
 
 
                                     </form> -->
