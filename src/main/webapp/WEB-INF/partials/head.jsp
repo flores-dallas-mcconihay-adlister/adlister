@@ -24,6 +24,10 @@
 	.delete-button, .edit-button {
         margin: 5px;
 	}
+    /*.add-button {*/
+    /*    width: 26px;*/
+    /*    height: 26px;*/
+    /*}*/
     .show-button {
         /*margin-right: auto;*/
         /*margin-top: 1.5rem;*/
@@ -125,12 +129,32 @@
         /*padding: 20px;*/
         padding: 10px 5px;
 	}
-    /*overall css edits end*/
+	.flex-button {
+        margin-bottom: 1rem;
+		display: flex;
+		justify-content: start;
+	}
+	.add-button {
+		display: block;
+		width: 50px;
+		height: 50px;
+	}
+	.bi-plus-lg {
+		padding-right: 2px;
+	}
+
+
+
+	/*overall css edits end*/
     
     /*media queries*/
-    @media screen and (min-width: 320px) and (max-width: 767px) {
+    @media screen and (min-width: 320px) and (max-width: 768px) {
         /*login screen edits*/
+        #hideOnSmall {
+            display: none;
+        }
         .main-header {
+            margin-top: 5rem;
             font-size: 3.5rem;
             font-weight: 300;
             line-height: 1.2;
@@ -168,30 +192,32 @@
 
         /*index/home page edits*/
 
-        .flex-button {
-            display: flex;
-            justify-content: center;
-        }
+
         .index-header {
             margin-bottom: 5rem;
         }
-		.add-button {
-			display: block;
-			width: 50%;
-			margin: .5rem!important;
-		}
+
+
         .adjust-form-width {
             width: 58%;
         }
         .index-container {
-            padding-top: 4.5rem;
+            margin-top: 2rem;
         }
+        nav {
+			background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+
+		}
 
 	}
 
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
         /*login screen edits*/
+        #hideOnSmall {
+            display: none;
+        }
 		.main-header {
+            margin-top: 5rem;
 			font-size: 3.5rem;
 			font-weight: 300;
 			line-height: 1.2;
@@ -216,29 +242,86 @@
         }
         /*login screen edits end*/
         .index-container {
-            padding-top: 4.5rem;
+            padding-top: 2rem;
         }
-        .flex-button {
-            display: flex;
-            justify-content: center;
-            margin: 20px;
-        }
-		.add-button {
-			display: block;
-			width: 50%;
-			margin: .5rem!important;
+
+		nav {
+			background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+
 		}
+
 
 	}
 
-    @media screen and (min-width: 1024px) {
-        /*.change-bg-lg {*/
-        /*    background-color: #f8f9fa;*/
+    @media screen and (min-width: 1024px) and (max-width: 1440px){
+        /*body {*/
+        /*    height: 100vh;*/
+        /*}*/
+		.main-header {
+			margin-top: 5rem;
+			font-size: 3.5rem;
+			font-weight: 300;
+			line-height: 1.2;
+			/*text-align: center;*/
+		}
+        #hideOnSmall {
+            display: contents;
+        }
+        #hideOnLarge {
+            display: none;
+        }
+        /*#hideOnSmall {*/
+        /*    display: contents;*/
+        /*}*/
+        /*.large-view {*/
+        /*    display: contents;*/
         /*}*/
         .navbar {
             background-color: #f8f9fa !important;
             padding-bottom: 1px;
         }
+        .navbarFlexBox {
+            /*display: block;*/
+            width: 100%;
+			/*flex-wrap: wrap;*/
+
+		}
+        .navbarFlexLinks {
+            display: flex;
+            margin-left: auto;
+        }
+        .flex-form {
+			position: relative;
+            margin: 0 auto;
+            left: 7rem;
+        }
+        .index-container {
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            margin-top: 5rem;
+            height: 100%;
+        }
+        .flex-button {
+            justify-content: end;
+        }
+        .cards {
+            height: 250px;
+            width: 275px;
+            margin: 10px auto;
+
+        }
+        .push-right {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /*width: 100%;*/
+            /*justify-content: center;*/
+
+        }
+        .flex-button {
+            justify-content: right;
+        }
+
 	}
 
 
