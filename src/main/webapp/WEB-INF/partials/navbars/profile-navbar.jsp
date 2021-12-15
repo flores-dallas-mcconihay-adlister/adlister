@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <a href="/index" class="navbar-brand brand-font">Laughlister!</a>
+    <a href="/profile" class="navbar-brand">@${sessionScope.user.username}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

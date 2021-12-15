@@ -8,14 +8,9 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbars/profile-navbar.jsp"/>
 <jsp:include page="partials/modals/addPostModal.jsp"/>
-<div class="index-container">
-    <h3 class="main-header">Home</h3>
-</div>
+<jsp:include page="partials/divs/main-header.jsp"/>
 <div class="container index-container">
-    <div class="flex-button">
-        <button type="button" data-toggle="modal" data-target="#addPostModal" class="add-button btn bg-dark"><i class="bi bi-plus-lg text-white"></i></button>
-    </div>
-
+    <jsp:include page="partials/modals/addPostModalBtnTrigger.jsp"/>
     <container class="flex-column d-flex">
         <c:forEach var="posts" items="${posts}">
             <div class="card cards">
