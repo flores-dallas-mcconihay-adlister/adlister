@@ -1,6 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 <style>
@@ -14,13 +18,40 @@
 		background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 		height: 100%;
 	}
+    footer {
+        margin-top: 10rem;
+    }
 	.delete-button, .edit-button {
         margin: 5px;
 	}
     .show-button {
-        margin-right: auto;
+        /*margin-right: auto;*/
+        /*margin-top: 1.5rem;*/
+        width: 50%;
+
 
     }
+	/*.cards {*/
+	/*	margin: 10px auto;*/
+	/*	width: 100%;*/
+	/*}*/
+
+    .cards {
+        height: 25%;
+        text-align: center;
+		margin: 10px auto;
+		width: 100%;
+    }
+    .adjust-btn-height {
+        /*height: 75%;*/
+        position: relative;
+        top: .25rem;
+    }
+    .brand-font {
+		font-family: 'Bangers', cursive;
+        font-size: x-large;
+    }
+
 
 
 	.btn-grad {background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)}
@@ -125,14 +156,7 @@
             display: flex;
             justify-content: center;
         }
-		footer {
-            margin-top: 200px;
 
-
-			/*z-index: 1;*/
-			/*flex-shrink: 0;*/
-			/*background-color: #eeeeee;*/
-		}
         .emoji-pic {
             height: 250px;
             align-items: center;
@@ -142,13 +166,6 @@
         /*login screen edits end*/
 
         /*index/home page edits*/
-        .index-container {
-
-        }
-        .cards {
-            margin: 10px auto;
-            width: 100%;
-        }
 
         .flex-button {
             display: flex;
@@ -162,10 +179,17 @@
 			width: 50%;
 			margin: .5rem!important;
 		}
+        .adjust-form-width {
+            width: 58%;
+        }
+        .index-container {
+            padding-top: 4.5rem;
+        }
 
 	}
 
     @media screen and (min-width: 768px) and (max-width: 1023px) {
+        /*login screen edits*/
 		.main-header {
 			font-size: 3.5rem;
 			font-weight: 300;
@@ -189,6 +213,10 @@
             height: 100vh;
             margin-top: 20%;
         }
+        /*login screen edits end*/
+        .index-container {
+            padding-top: 4.5rem;
+        }
         .flex-button {
             display: flex;
             justify-content: center;
@@ -199,11 +227,17 @@
 			width: 50%;
 			margin: .5rem!important;
 		}
-        .cards {
-            margin: 10px auto;
-            width: 100%;
-        }
 
+	}
+
+    @media screen and (min-width: 1024px) {
+        /*.change-bg-lg {*/
+        /*    background-color: #f8f9fa;*/
+        /*}*/
+        .navbar {
+            background-color: #f8f9fa !important;
+            padding-bottom: 1px;
+        }
 	}
 
 
