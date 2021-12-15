@@ -10,6 +10,8 @@
 
 <script>
     $(document).ready(function () {
+		// $('.hideOnload').css('display', 'none')
+
         $('.show-button').click(function () {
 			if ($(this).siblings('p').hasClass('invisible')) {
 				$(this).siblings('p').removeClass('invisible')
