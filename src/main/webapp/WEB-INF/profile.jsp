@@ -7,26 +7,18 @@
 <body>
 <jsp:include page="partials/navbars/profile-navbar.jsp"/>
 <jsp:include page="partials/modals/addPostModal.jsp"/>
-
-<div class="index-container">
-    <h3 class="main-header">Hello, ${sessionScope.user.username}.</h3>
-</div>
+<jsp:include page="partials/divs/main-header.jsp"/>
 <div class="container index-container">
-    <div class="flex-button">
-        <button type="button" data-toggle="modal" data-target="#addPostModal" class="add-button btn bg-dark"><i class="bi bi-plus-lg text-white"></i></button>
-    </div>
+    <jsp:include page="partials/modals/addPostModalBtnTrigger.jsp"/>
     <container class="flex-column d-flex">
-<%--items is grabbing the get att--%>
+        <%--items is grabbing the get att--%>
         <c:forEach var="post" items="${post}">
             <div class="card cards">
                 <div class="card-body">
-
                     <h3 class="card-title"> ${post.title} </h3>
-
                     <p id="hide-joke" class="card-text"> ${post.description} </p>
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-warning edit-button btn-sm" data-id="${posts.id}" data-toggle="modal" data-target="#editPostModal" name="edit-post" type="submit"><i class="bi bi-pencil-square"></i></button>
-
                         <button class="btn btn-danger delete-button btn-sm" data-id="${posts.id}" data-toggle="modal" data-target="#deletePostModal" name="post-delete" type="submit"><i class="bi bi-trash-fill" style="font-size: 16px"></i></button>
                     </div>
 

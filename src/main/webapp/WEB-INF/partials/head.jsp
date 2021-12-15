@@ -28,8 +28,6 @@
         /*margin-right: auto;*/
         /*margin-top: 1.5rem;*/
         width: 50%;
-
-
     }
 	/*.cards {*/
 	/*	margin: 10px auto;*/
@@ -51,6 +49,9 @@
 		font-family: 'Bangers', cursive;
         font-size: x-large;
     }
+    .navbar-brand {
+		font-family: 'Montserrat', sans-serif;
+	}
 
 
 
