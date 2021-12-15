@@ -7,7 +7,7 @@
 <body>
     <div id="loginContainer" class="content">
         <div class="logo-box">
-            <div>
+            <div class="adjust-box-margin">
                 <h1 class="main-header">Laughlister!</h1>
                 <p class="lead main-p"><em>It's like Craigslist, but for jokes!</em></p>
                 <hr class="main-break">

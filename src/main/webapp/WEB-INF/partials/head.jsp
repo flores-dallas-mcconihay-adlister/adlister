@@ -211,7 +211,7 @@
 
 	}
 
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
         /*login screen edits*/
         #hideOnSmall {
             display: none;
@@ -238,7 +238,8 @@
             display: flex;
             justify-content: space-around;
             height: 100vh;
-            margin-top: 20%;
+            margin-top: 10%;
+            align-items: center;
         }
         /*login screen edits end*/
         .index-container {
@@ -270,12 +271,7 @@
         #hideOnLarge {
             display: none;
         }
-        /*#hideOnSmall {*/
-        /*    display: contents;*/
-        /*}*/
-        /*.large-view {*/
-        /*    display: contents;*/
-        /*}*/
+
         .navbar {
             background-color: #f8f9fa !important;
             padding-bottom: 1px;
@@ -320,6 +316,13 @@
         }
         .flex-button {
             justify-content: right;
+        }
+        .content {
+            margin-top: 0;
+        }
+        .adjust-box-margin {
+            position: relative;
+            top: -2rem;
         }
 
 	}
