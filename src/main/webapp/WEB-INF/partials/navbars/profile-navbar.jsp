@@ -7,6 +7,7 @@
 --%>
 <nav style="" class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
     <a href="/profile" class="navbar-brand">@${sessionScope.user.username}</a>
+    <a style="color: black" href="/index"><i class="bi bi-house d-lg-none"></i></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
