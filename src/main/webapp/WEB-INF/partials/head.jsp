@@ -254,7 +254,7 @@
 
 	}
 
-    @media screen and (min-width: 1024px) and (max-width: 1440px){
+    @media screen and (min-width: 1024px) {
         /*body {*/
         /*    height: 100vh;*/
         /*}*/
@@ -316,14 +316,30 @@
         }
         .flex-button {
             justify-content: right;
+            position: relative;
+            right: 1.5rem;
         }
         .content {
+            display: flex;
             margin-top: 0;
+			justify-content: space-around;
+			height: 100vh;
+			align-items: center;
         }
         .adjust-box-margin {
             position: relative;
             top: -2rem;
         }
+		.join-button {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 25px;
+		}
+		.emoji-pic {
+			text-align: center;
+		}
+
 
 	}
 
