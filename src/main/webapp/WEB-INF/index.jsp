@@ -12,10 +12,13 @@
 <div class="container index-container">
 
     <container class="">
+
         <div class="">
+
             <div id="hideOnSmall"  class="">
                 <h3 class="brand-font main-header">Laughlister!</h3>
             </div>
+
             <jsp:include page="partials/modals/addPostModalBtnTrigger.jsp"/>
 
             <div class="push-right">
@@ -25,12 +28,12 @@
                             <h3 class="card-title"> ${posts.title}</h3>
                             <div class="my-3 d-flex flex-column" style="height: fit-content">
                                 <p class="invisible card-text hide-joke ">${posts.description}</p>
-                                <button id="show-joke-btn" class="btn btn-dark show-button btn-sm align-self-center">Show</button>
+                                <button id="show-joke-btn" class="btn btn-transparent show-button btn-sm align-self-center">
+                                    <img src="/images/laughing-emoji.png" alt="laughingEmoji" height="45px" width="45px"></button>
                             </div>
                         </div>
                     </div>
                 </c:forEach>
-
             </div>
         </div>
 
