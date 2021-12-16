@@ -10,6 +10,7 @@
 
 <script>
     $(document).ready(function () {
+		$('body').addClass('bg-pan-left');
 		// $('.hideOnload').css('display', 'none')
 
         $('.show-button').click(function () {

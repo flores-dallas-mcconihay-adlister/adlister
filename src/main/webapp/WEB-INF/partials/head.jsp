@@ -8,13 +8,93 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 <style>
-    
-    /*overall css edits*/
+	/**
+     * ----------------------------------------
+     * animation heartbeat
+     * ----------------------------------------
+     */
+	@keyframes heartbeat {
+		from {
+			transform: scale(1);
+			transform-origin: center center;
+			animation-timing-function: ease-out;
+		}
+		10% {
+			transform: scale(0.91);
+			animation-timing-function: ease-in;
+		}
+		17% {
+			transform: scale(0.98);
+			animation-timing-function: ease-out;
+		}
+		33% {
+			transform: scale(0.87);
+			animation-timing-function: ease-in;
+		}
+		45% {
+			transform: scale(1);
+			animation-timing-function: ease-out;
+		}
+	}
+
+	/**
+     * ----------------------------------------
+     * animation bg-pan-left
+     * ----------------------------------------
+     */
+	@keyframes bg-pan-left {
+		0% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	/**
+     * ----------------------------------------
+     * animation text-pop-up-top
+     * ----------------------------------------
+     */
+	@keyframes text-pop-up-top {
+		0% {
+			transform: translateY(0);
+			transform-origin: 50% 50%;
+			text-shadow: none;
+		}
+		100% {
+			transform: translateY(-50px);
+			transform-origin: 50% 50%;
+			text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+
+	/*overall css edits*/
+
+    /*show button animation start*/
+    .show-button:focus {
+        outline: none;
+        box-shadow: none;
+    }
+	.show-button {
+		box-shadow: none !important;
+		/*margin-right: auto;*/
+		/*margin-top: 1.5rem;*/
+		/*width: 50%;*/
+	}
+    .show-button:hover {
+        animation-name: heartbeat;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
+    }
+    /*show button animation end*/
+
 	html {
 		height: 100%;
 	}
 	body {
-        /*background-color: #1D976C;*/
 		background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 		height: 100%;
 	}
@@ -24,25 +104,11 @@
 	.delete-button, .edit-button {
         margin: 5px;
 	}
-    /*.add-button {*/
-    /*    width: 26px;*/
-    /*    height: 26px;*/
-    /*}*/
-    .show-button {
-        /*margin-right: auto;*/
-        /*margin-top: 1.5rem;*/
-        width: 50%;
-    }
-	/*.cards {*/
-	/*	margin: 10px auto;*/
-	/*	width: 100%;*/
-	/*}*/
-
     .cards {
-        height: 25%;
+        /*height: 50%;*/
         text-align: center;
-		margin: 10px auto;
-		width: 100%;
+		margin: 10px;
+		/*width: 50%;*/
     }
     .adjust-btn-height {
         /*height: 75%;*/
@@ -56,9 +122,33 @@
     .navbar-brand {
 		font-family: 'Montserrat', sans-serif;
 	}
+	i {
+		font-size: 26px;
+	}
+	i:hover {
+		opacity: 50%;
+	}
+	#loginContainer {
+		/*margin-top: 5rem;*/
+		/*padding: 20px;*/
+		padding: 10px 5px;
+	}
+	.flex-button {
+		margin-bottom: 1rem;
+		display: flex;
+		justify-content: start;
+	}
+	.add-button {
+		display: block;
+		width: 50px;
+		height: 50px;
+	}
+	.bi-plus-lg {
+		padding-right: 2px;
+	}
 
 
-
+    /*login/logout button gradients*/
 	.btn-grad {background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)}
 	.btn-grad {
 		/*margin: 10px;*/
@@ -117,44 +207,20 @@
 		color: black;
 		text-decoration: none;
 	}
-
-	i {
-		font-size: 26px;
-	}
-	i:hover {
-		opacity: 50%;
-	}
-	#loginContainer {
-		/*margin-top: 5rem;*/
-        /*padding: 20px;*/
-        padding: 10px 5px;
-	}
-	.flex-button {
-        margin-bottom: 1rem;
-		display: flex;
-		justify-content: start;
-	}
-	.add-button {
-		display: block;
-		width: 50px;
-		height: 50px;
-	}
-	.bi-plus-lg {
-		padding-right: 2px;
-	}
-
-
+    /*login/logout button gradients end*/
 
 	/*overall css edits end*/
     
     /*media queries*/
     @media screen and (min-width: 320px) and (max-width: 768px) {
         /*login screen edits*/
+
         #hideOnSmall {
             display: none;
         }
         .main-header {
             margin-top: 5rem;
+            margin-bottom: 5rem;
             font-size: 3.5rem;
             font-weight: 300;
             line-height: 1.2;
@@ -181,23 +247,20 @@
             display: flex;
             justify-content: center;
         }
-
         .emoji-pic {
             height: 250px;
             align-items: center;
             display: flex;
             justify-content: center;
         }
+
         /*login screen edits end*/
 
         /*index/home page edits*/
 
-
         .index-header {
             margin-bottom: 5rem;
         }
-
-
         .adjust-form-width {
             width: 58%;
         }
@@ -208,11 +271,18 @@
 			background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 
 		}
+        .add-button {
+            position: relative;
+            left: 1rem;
+        }
+
 
 	}
 
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
+    @media screen and (min-width: 769px) and (max-width: 1023px) {
+
         /*login screen edits*/
+
         #hideOnSmall {
             display: none;
         }
@@ -232,59 +302,55 @@
             margin-right: auto;
             margin-top: 25px;
         }
-
         .content {
 
             display: flex;
-            justify-content: space-around;
-            height: 100vh;
-            margin-top: 20%;
+            justify-content: space-evenly;
+            /*height: 100vh;*/
+            /*margin-top: 10%;*/
+            align-items: center;
         }
+        /*.adjust-box-margin {*/
+        /*    position: relative;*/
+        /*    top: 5rem;*/
+        /*}*/
+
         /*login screen edits end*/
+
         .index-container {
             padding-top: 2rem;
         }
-
 		nav {
 			background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 
 		}
-
+        .add-button {
+            position: relative;
+            right: 4.5rem;
+        }
 
 	}
 
-    @media screen and (min-width: 1024px) and (max-width: 1440px){
-        /*body {*/
-        /*    height: 100vh;*/
-        /*}*/
+    @media screen and (min-width: 1024px) {
+
 		.main-header {
 			margin-top: 5rem;
+            margin-bottom: 5rem;
 			font-size: 3.5rem;
 			font-weight: 300;
 			line-height: 1.2;
-			/*text-align: center;*/
+            text-align: center;
 		}
-        #hideOnSmall {
-            display: contents;
-        }
         #hideOnLarge {
             display: none;
         }
-        /*#hideOnSmall {*/
-        /*    display: contents;*/
-        /*}*/
-        /*.large-view {*/
-        /*    display: contents;*/
-        /*}*/
         .navbar {
-            background-color: #f8f9fa !important;
             padding-bottom: 1px;
-        }
-        .navbarFlexBox {
-            /*display: block;*/
-            width: 100%;
-			/*flex-wrap: wrap;*/
+			background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 
+		}
+        .navbarFlexBox {
+            width: 100%;
 		}
         .navbarFlexLinks {
             display: flex;
@@ -296,38 +362,38 @@
             left: 7rem;
         }
         .index-container {
-            /*display: flex;*/
-            /*flex-direction: column;*/
             margin-top: 5rem;
             height: 100%;
         }
-        .flex-button {
-            justify-content: end;
-        }
         .cards {
-            height: 250px;
-            width: 275px;
-            margin: 10px auto;
-
-        }
-        .push-right {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            /*width: 100%;*/
-            /*justify-content: center;*/
-
+            margin: 1rem auto;
+            width: 75%;
         }
         .flex-button {
             justify-content: right;
+            position: relative;
+            right: 9rem;
         }
+		.content {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+        .adjust-box-margin {
+            position: relative;
+            top: -2rem;
+        }
+		.join-button {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 25px;
+		}
+		.emoji-pic {
+			text-align: center;
+		}
 
 	}
-
-
-    
-
-
 
 </style>
 
